@@ -3,12 +3,9 @@ package pages;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
@@ -26,7 +23,7 @@ public class HomePage {
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-
+        //This executor is used in order to scroll down to be able to click on the elements
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
         PageFactory.initElements(driver, this);
